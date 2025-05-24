@@ -1,0 +1,38 @@
+.productos-container {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.producto-card {
+    background: radial-gradient(#eceef1, #79808f);
+    border-radius: 15px;
+    padding: 1em;
+    max-width: 25em;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.producto-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+}
+
+@media (max-width: 1000px){
+    .producto-card{
+        min-height: 60vh;
+    }
+    
+}
+
+@media (max-width: 800px){
+    .producto-card{
+        min-height: 50vh;
+    }
+}
