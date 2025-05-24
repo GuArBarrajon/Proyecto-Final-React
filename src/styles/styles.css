@@ -155,6 +155,7 @@ header{
     width: 36px;
     cursor: pointer;
     display: none;
+    font-size: 3em;
 }
 
 #moneda, #carrito_compras{
@@ -534,7 +535,7 @@ footer{
     body{
         font-size: .9rem;
     }
-
+    .producto{min-height: 50vh;}
     .logo{
         padding-right: 250px;
     }
@@ -546,6 +547,7 @@ footer{
 }
 
 @media (max-width: 1000px){
+    .producto{min-height: 40vh;}
     body{font-size: .8rem;} 
 
     .logo{
@@ -569,6 +571,9 @@ footer{
 }
 
 @media (max-width: 800px){
+    body{font-size: .75rem;}
+    .producto__detalle{width: 40vw;}
+
     header{
         height: 50px;
         display: flex;
@@ -587,8 +592,7 @@ footer{
     
     .header__links{
         width: 60%;
-        font-size: .5rem;
-        justify-content: space-between;
+        font-size: .75rem;
     }
 
     .header__link{
@@ -636,6 +640,7 @@ footer{
         grid-auto-rows: max-content;
         overflow-y: auto;
         transform: translateX(100%);
+        font-size: 1.3em;
     }
 
 
@@ -710,6 +715,7 @@ footer{
 }
 
 @media screen and (max-width: 500px){
+    .producto__detalle{width: 50vw;}
     .header__links{width: 290px;}
     .logo{font-size: .8rem;}
 }
