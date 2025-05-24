@@ -22,7 +22,7 @@ function Main() {
     return ( 
         <main>
             <section>
-            <img src="../src/assets/images/Banner2-1600x350-66e1dc69283dc.webp" alt="Banner" width="100%"/>
+            <img src="../images/Banner2-1600x350-66e1dc69283dc.webp" alt="Banner" width="100%"/>
         </section>
 
         <section>
