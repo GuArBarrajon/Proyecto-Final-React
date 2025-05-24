@@ -8,7 +8,7 @@ function Header({ user, admin}) {
     return (
 
         <header id="header1">
-            <img src="/src/assets/images/diamante.png" className="logo__img" alt="Logo_presentación" height="70px" width="70px"></img>
+            <img src="../images/diamante.png" className="logo__img" alt="Logo_presentación" height="70px" width="70px"></img>
             <h1 className="logo">Gemas y joyas</h1>
             <div className="header__links">
                 

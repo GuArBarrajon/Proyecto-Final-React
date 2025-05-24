@@ -64,7 +64,7 @@ function Info() {
                 </div>
                 <div>
                     <h4>Medidor de Anillos</h4>
-                    <img src="../src/assets/images/medidas_anillos.png" alt="medidor de anillos" width="100%"></img>
+                    <img src="../images/medidas_anillos.png" alt="medidor de anillos" width="100%"></img>
                 </div>
             </div>
         </section>
@@ -78,7 +78,7 @@ function Info() {
                     <p>Con este medio de pago podrás abonar con tarjeta de crédito ó débito.</p>
                     <p>Tenemos 3 cuotas sin interés con todas las tarjetas de crédito (válido en la web y en el local).</p>
                     <p>Las tarjetas disponibles son:</p>
-                    <img src="../src/assets/images/tarjetas.png" alt="tarjetas" width="100%"></img>
+                    <img src="../images/tarjetas.png" alt="tarjetas" width="100%"></img>
                     <li>CUOTAS: Solo para compras online</li>
                     <li>TRANSFERENCIA: Solo para ventas online</li>
                     <li>EFECTIVO: en el local de Caballito.</li>
