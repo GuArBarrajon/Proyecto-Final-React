@@ -7,7 +7,7 @@ import { useAuthContext } from "../context/AuthContext.jsx";
 import { dispararAlert } from "../assets/SweetAlert2.js";
 
 export default function Carrito () {
-    const { user } = useAuthContext();
+    const { user, cargandoAuth } = useAuthContext();
     const { productosCarrito, vaciarCarrito, borrarProductoCarrito } = useContext(CarritoContext);
     const total = productosCarrito.reduce(
         (acumulador, producto) => acumulador + (producto.precio * producto.cantidad), 0
@@ -15,6 +15,10 @@ export default function Carrito () {
 
     function funcionDisparadora(id){
         borrarProductoCarrito(id)
+    }
+
+    if (cargandoAuth) {
+        return null; // o un spinner
     }
 
     if (!user){

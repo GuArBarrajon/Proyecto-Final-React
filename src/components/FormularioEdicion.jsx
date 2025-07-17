@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { dispararAlert } from "../assets/SweetAlert2";
 
 function FormularioEdicion({ }) {
-    const {admin} = useAuthContext();
+    const {admin, cargandoAuth} = useAuthContext();
     const { id } = useParams();
     
     const {obtenerProducto, productoEncontrado, editarProducto} = useProductosContext();
@@ -21,11 +21,6 @@ function FormularioEdicion({ }) {
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
     
-    if(!admin){
-        return(
-        <Navigate to="/login" replace/>
-        )
-    }
 
     useEffect(() => {
         
@@ -49,12 +44,21 @@ function FormularioEdicion({ }) {
         if (productoEncontrado && Object.keys(productoEncontrado).length > 0) {
             setProducto(productoEncontrado);
         }
-    }, [productoEncontrado]);  Dependencia: productoEncontrado
+    }, [productoEncontrado]);  //Dependencia: productoEncontrado
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProducto({ ...producto, [name]: value });
     };
+
+    if (cargandoAuth) {
+        return null; // o un spinner
+    }
+    if(!admin){
+        return(
+        <Navigate to="/login" replace/>
+        )
+    }
 
     const validarFormulario = () => {
         if (!producto.nombre.trim()) {

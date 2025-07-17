@@ -14,6 +14,6 @@ function Servicios() {
             </div>   
         </section>
     );
-  }
-  
+}
+
 export default Servicios;

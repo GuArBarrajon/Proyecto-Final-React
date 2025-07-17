@@ -9,55 +9,55 @@ function Productos ()
                 <div className="titulo">
                     <h2>Relojes</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="reloj"/></div>
+                <ProductosContainer tipo="reloj"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Lingotes</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="lingote"/></div>
+                <ProductosContainer tipo="lingote"/>
             </section>
                         <section>
                 <div className="titulo">
                     <h2>Alianzas</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="alianza"/></div>
+                <ProductosContainer tipo="alianza"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Anillos</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="anillo"/></div>
+                <ProductosContainer tipo="anillo"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Cadenas y Collares</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="cadena"/></div>
+                <ProductosContainer tipo="cadena"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Pulseras</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="Pulsera"/></div>
+                <ProductosContainer tipo="Pulsera"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Aros</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="Aro"/></div>
+                <ProductosContainer tipo="Aro"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Prendedores</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="Prendedor"/></div>
+                <ProductosContainer tipo="Prendedor"/>
             </section>
             <section>
                 <div className="titulo">
                     <h2>Gemelos</h2>
                 </div>
-                <div className="contenedor"><ProductosContainer tipo="Gemelo"/></div>
+                <ProductosContainer tipo="Gemelo"/>
             </section>
         </>
     )

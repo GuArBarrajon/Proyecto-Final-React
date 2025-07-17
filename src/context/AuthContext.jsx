@@ -7,6 +7,7 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [admin, setAdmin] = useState(false);
+    const [cargandoAuth, setCargandoAuth] = useState(true);
 
     const login = (userName) => {
         //simulando la creación de un token
@@ -28,21 +29,21 @@ export function AuthProvider({ children }) {
 
     function verificacionLog() {
         const userToken = localStorage.getItem('authToken');
-        console.log(userToken);
-        if (userToken && userToken == 'fake-token-admin@admin.com') {
+        if (userToken && userToken === 'fake-token-admin@admin.com') {
             setAdmin(true);
             setUser('admin@admin.com');
-            return;
-        }
-        if (userToken) {
-            setUser(userToken.replace('fake-token-', ''));
+        } else if (userToken) {
             setAdmin(false);
-            return;
+            setUser(userToken.replace('fake-token-', ''));
+        } else {
+            setAdmin(false);
+            setUser(null);
         }
+        setCargandoAuth(false);
     }
     
     return (
-        <AuthContext.Provider value={{ user, login, logout, admin, verificacionLog }}>
+        <AuthContext.Provider value={{ user, login, logout, admin, verificacionLog, cargandoAuth }}>
             {children}
         </AuthContext.Provider>
     );

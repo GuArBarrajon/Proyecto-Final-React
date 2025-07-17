@@ -5,7 +5,7 @@ import { useProductosContext } from '../context/ProductosContext';
 import { useEffect, useState } from "react";
 
 export default function Admin() { 
-    const { user } = useAuthContext();
+    const { user, admin, cargandoAuth } = useAuthContext();
     const {productos, obtenerProductos, eliminarProducto} = useProductosContext();
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
@@ -20,6 +20,9 @@ export default function Admin() {
         });
     },[] )}
 
+    if (cargandoAuth) {
+        return null; // o un spinner
+    }
 
     if (!user || user !== 'admin@admin.com') {
         return <Navigate to="/login" replace />; 

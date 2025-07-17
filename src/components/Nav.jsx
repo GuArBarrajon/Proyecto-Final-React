@@ -1,16 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 function Nav() {
     const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el menú está abierto
-
+    const menuRef = useRef(null); // Referencia al menú para manejar clics fuera del menú
     const toggleMenu = () => {
         setIsOpen(!isOpen); // Invierte el valor de isOpen
     };
 
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
+
     return (
-        <nav className="menu">
+        <nav className="menu" ref={menuRef}>
             <div className="menu__hamburguer" onClick={toggleMenu}> {/* Añade el onClick para el ícono */}
                 <GiHamburgerMenu className='menu__img'/>
             </div>

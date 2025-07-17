@@ -6,7 +6,7 @@ import { useProductosContext } from '../context/ProductosContext';
 
 function FormularioProducto({}) {
     const { agregarProducto } = useProductosContext();
-    const { admin } = useAuthContext();
+    const { admin, cargandoAuth } = useAuthContext();
 
     const [producto, setProducto] = useState({
         nombre: '',
@@ -54,6 +54,10 @@ function FormularioProducto({}) {
         } else{
         dispararAlert("Error en la carga de producto", validarForm, "error", "Cerrar")
         }
+    }
+
+    if (cargandoAuth) {
+        return null; // o un spinner
     }
 
     if(!admin){
