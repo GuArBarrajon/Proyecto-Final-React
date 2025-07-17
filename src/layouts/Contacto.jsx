@@ -1,4 +1,4 @@
-import { FaCogs, FaRegEnvelope, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaRegEnvelope, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 
 function Contacto () {
@@ -7,7 +7,7 @@ function Contacto () {
         <section>
             <div className="titulo">
                 <h2>Contacto</h2>
-                <p>Contacto en desarrollo  <FaCogs/></p>
+                <p>Si tienes alguna consulta, no dudes en contactarnos</p>
             </div>
             <div className="contenedor" style={{gap: '2em'}}>
                 <div className="contenedor__texto" >
@@ -31,7 +31,7 @@ function Contacto () {
                 </div>
                 <div className="contenedor__texto" >
                     <h4>Formulario de Contacto</h4>
-                    <div >
+                    <form action="https://formspree.io/f/xrbggzzq" method="POST">
                         <label for="nombre">Nombre</label>
                         <p><input type="text" name="nombre" style={{width:"100%"}} placeholder="Escriba su Nombre y Apellido" required/></p>
                         <label for="correo">Correo Electrónico</label>
@@ -39,7 +39,7 @@ function Contacto () {
                         <label for="mensaje">Tu Mensaje</label>
                         <p><textarea name="mensaje" style={{width:"100%"}} placeholder="Deje su comentario" rows="5" required/></p>
                         <button type="submit" title="Enviar mensaje" style={{width:"100%"}} className="boton2">Enviar</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
