@@ -32,7 +32,7 @@ function ProductoDetalle () {
     }, [id]);
 
     function funcionCarrito (){
-        if(!user) dispararAlert('No iniciaste sesión', 'Debes iniciar sesión para agregar productos al carrito', 'warning', 'Iniciar Sesión', '../login');
+        if(!user) dispararAlert('No iniciaste sesión', 'Debes iniciar sesión para agregar productos al carrito', 'warning', 'Aceptar');
         else if(cantidad < 1) return;
         else{
             agregarAlCarrito({...productoEncontrado, cantidad});
