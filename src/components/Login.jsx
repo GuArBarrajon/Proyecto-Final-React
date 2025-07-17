@@ -32,12 +32,14 @@ function Login() {
                         type="text"
                         value={usuario}
                         onChange={(e) => setUsuario(e.target.value)}
+                        required
                     />
                     <label>Contraseña:</label>
                     <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
                     />
                     <button type="submit" className="boton2">Iniciar sesión</button>
                 </form>
