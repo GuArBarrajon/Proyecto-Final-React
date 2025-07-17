@@ -4,43 +4,38 @@ import {  useParams } from "react-router-dom";
 import { dispararAlert } from "../assets/SweetAlert2";  
 import { FaCartPlus } from "react-icons/fa";
 import { CarritoContext } from "../context/CarritoContext";
+import { useAuthContext } from "../context/AuthContext";
+import { useProductosContext } from '../context/ProductosContext';
 
-function ProductoDetalle ({ user, admin}) {
-
+function ProductoDetalle () {
+    const { user } = useAuthContext();
     const { agregarAlCarrito } = useContext(CarritoContext);
+    const { productoEncontrado, obtenerProducto } = useProductosContext();
 
     const {id} = useParams();
-    const [producto, setProducto] = useState(null);
     const [cantidad, setCantidad] = useState(1);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
-
     useEffect(() => {
-    fetch('https://68173ac526a599ae7c39b345.mockapi.io/productos')
-        .then((res) => res.json())
-        .then((datos) => {
-            console.log(datos);
-            const productoEncontrado = datos.find((item) => item.id === id);
-            if (productoEncontrado) {
-            setProducto(productoEncontrado);
-            } else {
-            setError("Producto no encontrado.");
-            }
-            setCargando(false);
-        })
-        .catch((err) => {
-            console.log("Error:", err);
+        obtenerProducto(id).then(() => {
+        setCargando(false);
+        }).catch((error) => {
+        if(error == "Producto no encontrado"){
+            setError("Producto no encontrado")
+        }
+        if(error == "Hubo un error al obtener el producto."){
             setError("Hubo un error al obtener el producto.");
-            setCargando(false);
-        });
+        }
+        setCargando(false);
+        })
     }, [id]);
 
     function funcionCarrito (){
-        if(!user && !admin) dispararAlert('No iniciaste sesión', 'Debes iniciar sesión para agregar productos al carrito', 'warning', 'Iniciar Sesión');
+        if(!user) dispararAlert('No iniciaste sesión', 'Debes iniciar sesión para agregar productos al carrito', 'warning', 'Iniciar Sesión', '../login');
         else if(cantidad < 1) return;
         else{
-            agregarAlCarrito({...producto, cantidad});
+            agregarAlCarrito({...productoEncontrado, cantidad});
             dispararAlert('Producto agregado al carrito', 'El producto se ha agregado al carrito', 'success', 'Continuar');
         }
     }
@@ -56,17 +51,17 @@ function ProductoDetalle ({ user, admin}) {
 
     if (cargando) return <p>Cargando producto...</p>;
     if (error) return <p>{error}</p>;
-    if (!producto) return null;
+    if (!productoEncontrado) return null;
 
     return (
         <div className="producto-card producto__detalle" >
             <div>    
                 <button className="boton__rojo" onClick={() => window.history.back()} title="cerrar">X</button>
             
-                <h3>{producto.nombre}</h3>
-                <p>{producto.descripcion}</p>
-                <img className="imagen imagen__detalle" src={producto.imagen} alt={producto.nombre} />
-                <p>${producto.precio}</p>
+                <h3>{productoEncontrado.nombre}</h3>
+                <p>{productoEncontrado.descripcion}</p>
+                <img className="imagen imagen__detalle" src={productoEncontrado.imagen} alt={productoEncontrado.nombre} />
+                <p>${productoEncontrado.precio}</p>
                 <div>
                     <button className="boton__rojo" onClick={restarContador}>-</button>
                     <span style={{margin: '0 1em', color: 'darkblue'}}>{cantidad}</span>

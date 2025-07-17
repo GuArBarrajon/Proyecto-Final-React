@@ -7,7 +7,6 @@ function Nav() {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen); // Invierte el valor de isOpen
-        console.log(isOpen);
     };
 
     return (

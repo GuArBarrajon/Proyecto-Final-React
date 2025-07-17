@@ -24,6 +24,19 @@
     border-radius: 20%;
 }
 
+.carrito-item{
+    background: radial-gradient(#eceef1, #79808f);
+    border-radius: 15px;
+    margin: 1em;
+    padding: 1em;
+    width: 100wv;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
 @media (max-width: 1000px){
     .producto-card{
         min-height: 55vh;
@@ -34,5 +47,29 @@
 @media (max-width: 800px){
     .producto-card{
         min-height: 50vh;
+    }
+    .carrito-item{
+        width: 90vw;
+
+    }
+}
+
+@media (max-width: 600px){
+    .carrito-item{
+        font-size: 0.8em;
+    }
+    .producto-image{
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 450px){
+    .carrito-item{
+        font-size: 0.6em;
+    }
+    .producto-image{
+        width: 70px;
+        height: 70px;
     }
 }

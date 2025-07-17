@@ -10,18 +10,13 @@ export default function Card2 ({product, funcionDisparadora}){
 
 
     return (
-        <div className='producto-card card2'>
-            <div>
+        <div  className='carrito-item'>
                 <h2>{product.nombre}</h2>
-                <p>{product.descripcion}</p>
                 <img className='producto-image' src={product.imagen} alt={product.nombre} />
-                <div>
-                    <p>${product.precio}</p>
-                    <span>Cantidad: {product.cantidad}</span>
-                    <p>Total: ${(product.cantidad * product.precio).toFixed(2)}</p>
-                </div>
+                <p>${product.precio}</p>
+                <span>Cantidad: {product.cantidad}</span>
+                <p>Total: ${(product.cantidad * product.precio).toFixed(2)}</p>
                 <button className="boton__rojo" onClick={borrarDelCarrito}  title="Quitar producto del carrito"><FaRegTrashAlt /></button>
-            </div>
         </div>
     )
 }

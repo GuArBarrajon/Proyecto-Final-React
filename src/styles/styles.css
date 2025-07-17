@@ -282,7 +282,7 @@ input, textarea{
     border-radius: 10px;
 }
 
-#form_inicio, #form_recupero {
+#form_inicio, #form_agregar_producto, #form_editar_producto {
     width: 35%;
 }
 
@@ -320,6 +320,18 @@ input, textarea{
     margin: 0.5em;
 }
 
+th, td {
+    padding: 0.2em;
+}
+
+th {
+    background-color: #0e2249;
+    color:white;
+}
+
+tr:nth-child(even) {
+    background-color: #839ccd; 
+}
 
 .boton__rojo, .boton__azul{
     margin: 0.5em;
@@ -411,9 +423,16 @@ footer{
     width: 1.5em;
 }
 
+.btn-cancelar{
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    border: solid;
+}
+
+
 .btn3:hover{
     background-color: #df0724;
-    color: #fff;
     transition: all 1s;
 }
 
@@ -495,27 +514,6 @@ footer{
     align-items: center;
 }
 
-#carrito-lista li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-#carrito-lista li span {
-    flex: 1;
-    text-align: center;
-}
-
-#carrito-lista li {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
-    gap: 20px; /* Espacio entre los elementos */
-    padding: 20px; /* Espacio interno en el contenedor */
-}
-
 #boton-pagar {
     width: 100%;
     font-size: 18px;
@@ -530,7 +528,9 @@ footer{
     width: 100%;
 }
 
-
+.contenedor__admin{
+    font-size: 1em;
+}
 @media (max-width: 1250px){
     body{
         font-size: .9rem;
@@ -709,12 +709,17 @@ footer{
         width: 80%;
     }
 
-    #form_inicio, #form_recupero{
+    #form_inicio, #form_agregar_producto, #form_editar_producto{
         width: 70%;
     }
 }
 
-@media screen and (max-width: 500px){
+@media (max-width: 680px){
+    .contenedor__admin{font-size: 0.7em;}
+}
+
+@media (max-width: 500px){
+    .contenedor__admin{font-size: 0.6em;}
     .producto__detalle{width: 50vw;}
     .header__links{width: 290px;}
     .logo{font-size: .8rem;}
