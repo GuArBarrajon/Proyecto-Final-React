@@ -5,6 +5,7 @@ import { dispararAlert, eliminarAlert } from '../assets/SweetAlert2';
 const ProductosContext = createContext();
 export function ProductosProvider({ children }) {
     const [productos, setProductos] = useState([])
+    const [productosOriginales, setProductosOriginales] = useState([])
     const [productoEncontrado, setProductoEncontrado] = useState([])
 
     function obtenerProductos() {
@@ -16,6 +17,7 @@ export function ProductosProvider({ children }) {
                     )
                     .then((datos) => {
                         setProductos(datos)
+                        setProductosOriginales(datos)
                         res(datos)
                     })
                     .catch((error) => {
@@ -145,7 +147,7 @@ export function ProductosProvider({ children }) {
         }
 
         const productosFiltrados = productosOriginales.filter((producto) =>
-            producto.name.toLowerCase().includes(filtro.toLowerCase())
+            producto.nombre.toLowerCase().includes(filtro.toLowerCase())
         );
         setProductos(productosFiltrados)
     }

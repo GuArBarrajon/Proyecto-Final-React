@@ -1,0 +1,74 @@
+/* Input group */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.input-group-text {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 0.5em 0.75em;
+    border-radius: 0.25em 0 0 0.25em;
+    color: #555;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 0 0.25em 0.25em 0;
+    padding: 0.5em;
+    font-size: 1em;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #342474ff;
+}
+
+
+/* Botones de paginación */
+.btn {
+    padding: 0.5em 1em;
+    border: 1px solid #342474ff;
+    background: white;
+    color: #342474ff;
+    border-radius: 0.25em;
+    margin: 0 0.25em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background: #342474ff;
+    color: white;
+}
+
+.btn-outline-primary {
+    background: white;
+    color: #342474ff;
+}
+
+.mx-1 {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.my-4 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
