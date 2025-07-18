@@ -11,7 +11,7 @@ import Servicios from './layouts/servicios'
 import Info from './layouts/infoAyuda'
 import Donde from './layouts/dondeEstamos';
 import Contacto from './layouts/Contacto'
-import PoliticasCambio from './layouts/politasCambio'
+import PoliticasCambio from './layouts/politicasCambio'
 import ProductoDetalle from './components/productoDetalle'
 
 import Admin from './layouts/Admin'

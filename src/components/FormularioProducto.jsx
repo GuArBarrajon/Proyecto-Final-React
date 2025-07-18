@@ -80,16 +80,16 @@ function FormularioProducto({}) {
             </div>
             <div className="contenedor__texto" id='form_agregar_producto'>
                 <form onSubmit={handleSubmit}>
-                    <label>Nombre:</label>
+                    <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" value={producto.nombre} onChange={handleChange} required/>
 
-                    <label>URL de la Imagen</label>
+                    <label for="imagen">URL de la Imagen</label>
                     <input type="text" name="imagen" value={producto.imagen} onChange={handleChange} required/>
 
-                    <label>Precio:</label>
+                    <label for="precio">Precio:</label>
                     <input type="number" name="precio" value={producto.precio} onChange={handleChange} required min="0"/>
 
-                    <label>Tipo:</label>
+                    <label for="tipo">Tipo:</label>
                     <select name="tipo" value={producto.tipo} onChange={handleChange} required style={{ fontSize: "1.5em", borderRadius: "0.25em" }}>
                         <option value="" disabled>Seleccione una categoría</option>
                         {tipos.map((tipoItem) => (
@@ -97,7 +97,7 @@ function FormularioProducto({}) {
                         ))}
                     </select>
                     
-                    <label>Descripción:</label>
+                    <label for="descripcion">Descripción:</label>
                     <textarea name="descripcion"
                         value={producto.descripcion}
                         onChange={handleChange}

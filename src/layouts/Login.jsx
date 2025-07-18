@@ -27,15 +27,17 @@ function Login() {
             </div>
             <div className="contenedor__texto" id="form_inicio">
                 <form onSubmit={iniciarSesionEmailPass}>
-                    <label>Usuario:</label>
+                    <label for="usuario">Usuario:</label>
                     <input
+                        name="usuario"
                         type="text"
                         value={usuario}
                         onChange={(e) => setUsuario(e.target.value)}
                         required
                     />
-                    <label>Contraseña:</label>
+                    <label for="password">Contraseña:</label>
                     <input
+                        name="password"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

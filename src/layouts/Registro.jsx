@@ -57,23 +57,26 @@ function Registrarse() {
       </div>
       <div className="contenedor__texto" id="form_registro"> {/* Cambié el ID */}
         <form onSubmit={handleSubmit}>
-          <label>Email:</label> {/* Cambié 'Usuario' a 'Email' */}
+          <label for="email">Email:</label> {/* Cambié 'Usuario' a 'Email' */}
           <input
+            name="email"
             type="email" // Cambié a tipo email para validación básica del navegador
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required // Añadí el atributo required
           />
-          <label>Contraseña:</label>
+          <label for="password">Contraseña:</label>
           <input
+            name="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength="6" // Firebase requiere mínimo 6 caracteres para la contraseña
           />
-          <label>Confirmar Contraseña:</label> 
+          <label for="confirmPassword">Confirmar Contraseña:</label> 
           <input
+            name="confirmPassword"
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
