@@ -57,33 +57,37 @@ function Registrarse() {
       </div>
       <div className="contenedor__texto" id="form_registro"> {/* Cambié el ID */}
         <form onSubmit={handleSubmit}>
-          <label for="email">Email:</label> {/* Cambié 'Usuario' a 'Email' */}
+          <label htmlFor="email">Email:*</label> {/* Cambié 'Usuario' a 'Email' */}
           <input
             name="email"
             type="email" // Cambié a tipo email para validación básica del navegador
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Ingrese su correo electrónico"
             required // Añadí el atributo required
           />
-          <label for="password">Contraseña:</label>
+          <label htmlFor="password">Contraseña:*</label>
           <input
             name="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Escriba su contraseña"
             required
             minLength="6" // Firebase requiere mínimo 6 caracteres para la contraseña
           />
-          <label for="confirmPassword">Confirmar Contraseña:</label> 
+          <label htmlFor="confirmPassword">Confirmar Contraseña:*</label> 
           <input
             name="confirmPassword"
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirme su contraseña"
             required
           />
           <button type="submit" className="boton2">Registrarse</button>
         </form>
+        <p style={{ color: "#9d0f27", marginTop: "25px" }}>*Campos obligatorios</p>
       </div>
     </section>
   );

@@ -32,11 +32,11 @@ function Contacto () {
                 <div className="contenedor__texto" >
                     <h4>Formulario de Contacto</h4>
                     <form action="https://formspree.io/f/xrbggzzq" method="POST">
-                        <label for="nombre">Nombre</label>
+                        <label htmlFor="nombre">Nombre</label>
                         <p><input type="text" name="nombre" style={{width:"100%"}} placeholder="Escriba su Nombre y Apellido" required/></p>
-                        <label for="correo">Correo Electrónico</label>
+                        <label htmlFor="correo">Correo Electrónico</label>
                         <p><input type="email" name="correo" style={{width:"100%"}} placeholder="Ingrese su Correo Electrónico" required/></p>
-                        <label for="mensaje">Tu Mensaje</label>
+                        <label htmlFor="mensaje">Tu Mensaje</label>
                         <p><textarea name="mensaje" style={{width:"100%"}} placeholder="Deje su comentario" rows="5" required/></p>
                         <button type="submit" title="Enviar mensaje" style={{width:"100%"}} className="boton2">Enviar</button>
                     </form>

@@ -27,22 +27,25 @@ function Login() {
             </div>
             <div className="contenedor__texto" id="form_inicio">
                 <form onSubmit={iniciarSesionEmailPass}>
-                    <label for="usuario">Usuario:</label>
+                    <label htmlFor="usuario">Usuario:</label>
                     <input
                         name="usuario"
                         type="text"
                         value={usuario}
                         onChange={(e) => setUsuario(e.target.value)}
+                        placeholder="Ingrese su correo electrónico"
                         required
                     />
-                    <label for="password">Contraseña:</label>
+                    <label htmlFor="password">Contraseña:</label>
                     <input
                         name="password"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Escriba su contraseña"
                         required
                     />
+                    
                     <button type="submit" className="boton2">Iniciar sesión</button>
                 </form>
             </div>
