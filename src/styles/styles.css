@@ -49,7 +49,7 @@ header{
 
 .header__links{
     display: flex;
-    width: 30em;
+    width: auto;
     justify-content: space-around;
 }
 

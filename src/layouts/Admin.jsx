@@ -34,6 +34,7 @@ export default function Admin() {
 
     useEffect(() => {
         filtrarProductos(filtro)
+        setPaginaActual(1); // Resetea la paginación al buscar
     },[filtro])  //filtro
 
     if (cargandoAuth) {

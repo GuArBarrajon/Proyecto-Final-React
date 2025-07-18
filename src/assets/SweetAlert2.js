@@ -6,13 +6,13 @@ export function dispararAlert(titulo, texto, icono, textoBoton, url = null){
         text: texto,
         icon: icono,
         confirmButtonText: textoBoton
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
-          if (url) {
+            if (url) {
                 window.location.href = url;
             }
         }
-      });
+    });
 }
 
 export function eliminarAlert(titulo, texto, icono, ...botones) {
