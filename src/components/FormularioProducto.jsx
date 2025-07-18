@@ -21,7 +21,7 @@ function FormularioProducto({}) {
             return("El nombre es obligatorio.")
         }
         if(!producto.imagen.trim()){
-            return("La url de la imgaen no debe estar vacía")
+            return("La url de la imagen no debe estar vacía")
         }
         if (!producto.precio || producto.precio <= 0) {
             return("El precio debe ser mayor a 0.")

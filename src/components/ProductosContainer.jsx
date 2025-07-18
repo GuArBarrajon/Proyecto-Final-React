@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
 import Card from './Card';
-import { Link } from 'react-router-dom';
 import { useProductosContext } from '../context/ProductosContext';
 
 function ProductosContainer( {tipo} ) {

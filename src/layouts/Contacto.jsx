@@ -7,7 +7,7 @@ function Contacto () {
         <section>
             <div className="titulo">
                 <h2>Contacto</h2>
-                <p>Si tienes alguna consulta, no dudes en contactarnos</p>
+                <p>Si tiene alguna consulta, no dude en contactarnos</p>
             </div>
             <div className="contenedor" style={{gap: '2em'}}>
                 <div className="contenedor__texto" >

@@ -24,17 +24,17 @@ function Registrarse() {
     try {
       // Llamamos a la función crearUsuario de Firebase
       await crearUsuario(email, password);
-      dispararAlert('Registro exitoso', '¡Tu cuenta ha sido creada!', 'success', 'Aceptar');
+      dispararAlert('Registro exitoso', '¡Su cuenta ha sido creada!', 'success', 'Aceptar');
       login(email);
       navigate('/'); 
     } catch (error) {
       console.error("Error al registrar el usuario:", error);
-      let errorMessage = "Ocurrió un error al intentar registrarte.";
+      let errorMessage = "Ocurrió un error al intentar registrarlo.";
 
       // Mensajes de error específicos de Firebase 
       switch (error.code) {
         case 'auth/email-already-in-use':
-          errorMessage = 'El correo electrónico ya está en uso. Intenta iniciar sesión o usa otro correo.';
+          errorMessage = 'El correo electrónico ya está en uso. Intente iniciar sesión o use otro correo.';
           break;
         case 'auth/invalid-email':
           errorMessage = 'El formato del correo electrónico no es válido.';

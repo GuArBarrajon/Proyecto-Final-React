@@ -109,7 +109,7 @@ export function ProductosProvider({ children }) {
     return new Promise((res, rej) => {
             eliminarAlert(
                 'Eliminar producto',
-                '¿Estas seguro de eliminar el producto?',
+                '¿Está seguro de eliminar el producto?',
                 'warning',
                 'Eliminar',
                 'Cancelar'
