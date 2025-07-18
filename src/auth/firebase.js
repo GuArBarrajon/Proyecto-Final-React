@@ -1,10 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+
+// mi configuración de Firebase
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_apiKey,
     authDomain: import.meta.env.VITE_authDomain,
@@ -14,7 +12,7 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_appId
 };
 
-// Initialize Firebase
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
@@ -23,7 +21,7 @@ export function crearUsuario(email, password) {
         new Promise((resolve, reject) => {
             createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed up 
+                // Inicialización exitosa
                 console.log("credenciales ", userCredential);
                 const user = userCredential.user;
                 console.log(user);
@@ -44,7 +42,7 @@ export function loginEmailPass(email, password) {
         new Promise((resolve, reject) => {
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
+                // inicio de sesión exitoso
                 console.log("credenciales ", userCredential);
                 const user = userCredential.user;
                 console.log(user);
