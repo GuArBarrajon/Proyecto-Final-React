@@ -29,7 +29,7 @@ function Main() {
             <div className="titulo">
                 <h2>Productos Destacados</h2>
             </div>
-            <div className="contenedor"><ProductosContainer tipo={randomtype1}/></div>
+            <ProductosContainer tipo={randomtype1}/>
         </section>
 
         <section className="invertir">
@@ -40,7 +40,7 @@ function Main() {
             <div className="titulo">
                 <h2>Ofertas Exclusivas</h2>
             </div>
-            <div className="contenedor"><ProductosContainer tipo={randomtype2}/></div>
+            <ProductosContainer tipo={randomtype2}/>
         </section>
 
         </main> 
